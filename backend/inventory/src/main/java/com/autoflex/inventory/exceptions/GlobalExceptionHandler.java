@@ -1,6 +1,7 @@
 package com.autoflex.inventory.exceptions;
 
 import jakarta.persistence.EntityNotFoundException;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
@@ -24,5 +25,18 @@ public class GlobalExceptionHandler {
         return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
                 .body("Internal server error: " + ex.getMessage());
     }
+
+    @ExceptionHandler(DataIntegrityViolationException.class)
+    public ResponseEntity<String> handleDuplicateKey(DataIntegrityViolationException ex) {
+
+        if (ex.getMessage() != null && ex.getMessage().contains("products_code_key")) {
+            return ResponseEntity.status(HttpStatus.CONFLICT)
+                    .body("Already product with the same code exists");
+        }
+
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST)
+                .body("Error in database operation: " + ex.getMessage());
+    }
+
 
 }
