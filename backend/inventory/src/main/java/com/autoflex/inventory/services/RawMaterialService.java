@@ -109,4 +109,8 @@ public class RawMaterialService {
         return rawMaterial;
     }
 
+    public RawMaterial findEntityByCode(String code) {
+        return rawMaterialRepository.findByCode(code)
+                .orElseThrow(() -> new EntityNotFoundException("Raw material not found with code: " + code));
+    }
 }
