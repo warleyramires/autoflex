@@ -2,6 +2,8 @@ package com.autoflex.inventory.repositories;
 
 import com.autoflex.inventory.entities.ProductRawMaterial;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Modifying;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -15,4 +17,8 @@ public interface ProductRawMaterialRepository extends JpaRepository<ProductRawMa
     Optional<ProductRawMaterial> findByProductIdAndRawMaterialCode(Long productId, Long rawMaterialCode);
 
     boolean existsByProductIdAndRawMaterialCode(Long productId, Long rawMaterialCode);
+
+    @Modifying
+    @Query("DELETE FROM ProductRawMaterial prm WHERE prm.product.id = :productId")
+    void deleteByProductId(Long productId);
 }

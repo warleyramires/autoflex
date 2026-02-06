@@ -30,6 +30,5 @@ public class Product {
     private BigDecimal price;
 
     @OneToMany(mappedBy = "product", cascade = CascadeType.ALL, orphanRemoval = true)
-    @Builder.Default
     private List<ProductRawMaterial> rawMaterials = new ArrayList<>();
 }
