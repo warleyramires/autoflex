@@ -1,4 +1,13 @@
 package com.autoflex.inventory.dtos;
 
-public record ProductionItemResponseDTO() {
+import java.math.BigDecimal;
+
+public record ProductionItemResponseDTO(
+        Long productId,
+        String productCode,
+        String productName,
+        Integer quantityProssible,
+        BigDecimal unitValue,
+        BigDecimal totalValue
+) {
 }

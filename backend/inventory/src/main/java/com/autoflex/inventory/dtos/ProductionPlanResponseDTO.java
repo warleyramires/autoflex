@@ -1,4 +1,10 @@
 package com.autoflex.inventory.dtos;
 
-public record ProductionPlanResponseDTO() {
+import java.math.BigDecimal;
+import java.util.List;
+
+public record ProductionPlanResponseDTO(
+        List<ProductionItemResponseDTO> items,
+        BigDecimal grandTotalValue
+) {
 }
