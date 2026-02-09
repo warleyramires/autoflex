@@ -3,5 +3,4 @@ export type RawMaterial = {
     code: string
     name: string;
     stockQuantity: number;
-    unit: string;
 }

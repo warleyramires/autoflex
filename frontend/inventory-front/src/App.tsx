@@ -1,9 +1,19 @@
-function App() {
+import { BrowserRouter } from "react-router-dom";
+import { ThemeProvider, createTheme } from "@mui/material/styles";
+import CssBaseline from "@mui/material/CssBaseline";
+import { AppRoutes } from "./routes/AppRoutes";
+
+const theme = createTheme();
+
+export function App() {
   return (
-    <div>
-      <h1>App</h1>
-    </div>
-  )
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <BrowserRouter>
+        <AppRoutes />
+      </BrowserRouter>
+    </ThemeProvider>
+  );
 }
 
-export default App
+export default App;

@@ -22,12 +22,12 @@ export async function getRawMaterialByCode(code: string): Promise<RawMaterial>{
     return response.data;
 }
 
-export async function updateRawMaterial(code: number, data: UpdateRawMaterialDTO): Promise<RawMaterial>{
+export async function updateRawMaterial(code: string, data: UpdateRawMaterialDTO): Promise<RawMaterial>{
     const response = await api.put<RawMaterial>(`/raw-materials/${code}`, data);
     return response.data;
 }
 
-export async function deleteRawMaterial(code: number): Promise<void>{
+export async function deleteRawMaterial(code: string): Promise<void>{
     const response = await api.delete<RawMaterial>(`/raw-materials/${code}`)
     
 }
