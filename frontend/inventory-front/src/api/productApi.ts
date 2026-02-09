@@ -16,3 +16,18 @@ export async function getProductByCode(code: string): Promise<ProductResponseDTO
     const response = await api.get<ProductResponseDTO>(`products/code/${code}`)
     return response.data;
 }
+
+// não to usando, caso depois eu mude a busca por id e não code
+export async function getProductById(id: number): Promise<ProductResponseDTO>{
+    const response = await api.get<ProductResponseDTO>(`products/${id}`)
+    return response.data;
+}
+
+export async function updateProduct(code: string, data: ProductRequestDTO): Promise<ProductResponseDTO>{
+    const response = await api.put<ProductResponseDTO>(`products/code/${code}`)
+    return response.data;
+}
+
+export async function deleteProduct(code:string): Promise<void> {
+    await api.delete(`/products/${code}`);
+}
