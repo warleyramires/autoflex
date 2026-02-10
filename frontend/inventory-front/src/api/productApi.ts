@@ -1,5 +1,5 @@
 import {api} from "./axios"
-import type { Product } from "../types/product";
+import type { ProductionPlanResponseDTO } from "../types/product";
 import type { ProductRequestDTO, ProductResponseDTO } from "../types/productDTO";
 
 export async function createProduct(data: ProductRequestDTO): Promise<ProductResponseDTO>{
@@ -30,4 +30,9 @@ export async function updateProduct(code: string, data: ProductRequestDTO): Prom
 
 export async function deleteProduct(code:string): Promise<void> {
     await api.delete(`/products/${code}`);
+}
+
+export async function getProductionPlan(): Promise<ProductionPlanResponseDTO> {
+    const response = await api.get<ProductionPlanResponseDTO>("/production");
+    return response.data;
 }

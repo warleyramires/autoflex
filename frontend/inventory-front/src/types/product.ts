@@ -10,3 +10,17 @@ export type Product = {
     price: string,
     rawMaterials: ProductRawMaterial[]
 }
+
+export type ProductionItemResponseDTO = {
+    productId: number;
+    productCode: string;
+    productName: string;
+    quantityProssible: number; 
+    unitValue: number; 
+    totalValue: number;
+}
+
+export type ProductionPlanResponseDTO = {
+    items: ProductionItemResponseDTO[];
+    grandTotalValue: number;
+}
