@@ -1,4 +1,4 @@
-export type ProductRawMaterialRquestDTO = {
+export type ProductRawMaterialRequestDTO = {
     rawMaterialCode: string,
     quantity: number
 }
@@ -7,7 +7,7 @@ export type ProductRequestDTO = {
     code: string,
     name: string,
     price: number,
-    rawMaterial: ProductRawMaterialRquestDTO[];
+    rawMaterials: ProductRawMaterialRequestDTO[];
 }
 
 export type ProductRawMaterialResponseDTO = {
@@ -20,5 +20,6 @@ export type ProductResponseDTO = {
     id: number, 
     code: string,
     name: string,
+    price: number,
     rawMaterials: ProductRawMaterialResponseDTO[];
 }

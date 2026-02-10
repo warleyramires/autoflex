@@ -24,7 +24,7 @@ export async function getProductById(id: number): Promise<ProductResponseDTO>{
 }
 
 export async function updateProduct(code: string, data: ProductRequestDTO): Promise<ProductResponseDTO>{
-    const response = await api.put<ProductResponseDTO>(`products/code/${code}`)
+    const response = await api.put<ProductResponseDTO>(`products/${code}`, data)
     return response.data;
 }
 
