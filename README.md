@@ -17,7 +17,7 @@ Sistema de gerenciamento de estoque desenvolvido para controle de matérias-prim
 #### 1.1. Clonar o Repositório
 
 ```bash
-git clone <url-do-repositorio>
+git clone https://github.com/warleyramires/autoflex.git
 cd teste_tecnico
 ```
 
@@ -327,7 +327,7 @@ Edite o arquivo `src/api/axios.ts` e modifique a propriedade `baseURL`.
 
 ## 👨‍💻 Desenvolvido por
 
-[Seu Nome]
+Warley Ramires
 
 ---
 
