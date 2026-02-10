@@ -125,7 +125,7 @@ export function ProductsListPage() {
   }
 
   return (
-    <Box sx={{ padding: 4 }}>
+    <Box>
       <Box
         sx={{
           display: "flex",

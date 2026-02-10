@@ -131,7 +131,7 @@ export function RawMaterialListPage() {
   const listToShow = searchResult ? [searchResult] : rawMaterials;
 
   return (
-    <Box sx={{ padding: 4 }}>
+    <Box>
       <Box
         sx={{
           display: "flex",
@@ -149,7 +149,7 @@ export function RawMaterialListPage() {
         </Button>
       </Box>
 
-      {/* SEARCH */}
+    
       <Box sx={{ display: "flex", gap: 2, marginTop: 2 }}>
         <FormControl sx={{ minWidth: 150 }}>
           <InputLabel>Search By</InputLabel>
@@ -180,7 +180,7 @@ export function RawMaterialListPage() {
         </Button>
       </Box>
 
-      {/* TABLE */}
+    
       <Paper sx={{ marginTop: 3 }}>
         <Table>
           <TableHead>
@@ -255,14 +255,14 @@ export function RawMaterialListPage() {
         </Table>
       </Paper>
 
-      {/* CREATE DIALOG */}
+     
       <RawMaterialFormDialog
         open={openDialog}
         onClose={() => setOpenDialog(false)}
         onSubmit={handleCreateRawMaterial}
       />
 
-      {/* EDIT DIALOG */}
+      
       <RawMaterialFormDialog
         open={!!rawMaterialToEdit}
         onClose={handleCloseEditDialog}
@@ -270,7 +270,7 @@ export function RawMaterialListPage() {
         initialData={rawMaterialToEdit}
       />
 
-      {/* DELETE DIALOG */}
+     
       <Dialog open={openDeleteDialog} onClose={handleCloseDeleteDialog}>
         <DialogTitle>Delete Raw Material</DialogTitle>
 
